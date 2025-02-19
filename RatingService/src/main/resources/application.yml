@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/ratingmicroservice
     username: root
-    password: welcome
+    password: Welcome2@#*
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
