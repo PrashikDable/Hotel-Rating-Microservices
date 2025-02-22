@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>com.okta.spring</groupId>
 			<artifactId>okta-spring-boot-starter</artifactId>
-			<version>3.0.5</version>  <!-- Use the latest stable version -->
+			<version>3.0.7</version>  <!-- Use the latest stable version -->
 		</dependency>
 
 		<dependency>

@@ -12,25 +12,27 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 public class SecurityConfig {
 
     @Bean
-	public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity httpSecurity){
+    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity httpSecurity) {
 
-//		httpSecurity
-//				.authorizeExchange()
-//				.anyExchange()
-//				.authenticated()
-//				.and
-//				.oauth2Client()
-//				.and
-//				.oauth2ResourceServer()
-//				.jwt();
+//        httpSecurity
+//                .authorizeExchange()
+//                .anyExchange()
+//                .authenticated()
+//                .and()
+//                .oauth2Client()
+//                .and()
+//                .oauth2ResourceServer()
+//                .jwt();
+
         httpSecurity
-                .authorizeExchange(exchange -> exchange
-                        .anyExchange()
-                        .authenticated()
-                ).oauth2Client(Customizer.withDefaults())
+                .authorizeExchange(exchanges -> exchanges
+                        .anyExchange().authenticated()
+                )
+                .oauth2Client(Customizer.withDefaults())  // Enables OAuth2 client
                 .oauth2ResourceServer(oAuth2 -> oAuth2
                         .jwt(Customizer.withDefaults()));
 
-		return httpSecurity.build();
-	}
-}
+        return httpSecurity.build();
+        }
+
+    }

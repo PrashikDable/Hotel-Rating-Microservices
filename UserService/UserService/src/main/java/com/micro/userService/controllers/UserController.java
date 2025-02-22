@@ -41,7 +41,7 @@ public class UserController {
     // Fallback Method
     public ResponseEntity<User> ratingHotelFallback(String userId, Exception e){
         logger.info("Fallback is executed because service is down.",e.getMessage());
-
+        e.printStackTrace();
         User user = User.builder()
                 .email("dummyFallback@gmail.com")
                 .name("dummyFallBack")
@@ -54,6 +54,8 @@ public class UserController {
 // Rate Limiter
     public ResponseEntity<User> ratingHotelLimiter(String userId, Exception e){
         logger.info("Fallback is executed because of multiple request.",e.getMessage());
+
+        e.printStackTrace();
 
         User user = User.builder()
                 .email("dummyRateLimiter@gmail.com")
